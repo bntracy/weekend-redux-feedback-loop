@@ -23,6 +23,9 @@ const supportNum = (state = 0, action) => {
 }
 
 const commentsText = (state = '', action) => {
+    if (action.type === 'COMMENTSTEXT_STORE') {
+        return action.payload;
+    }
     return state;
 }
 
