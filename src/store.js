@@ -16,6 +16,9 @@ const understandingNum = (state = 0, action) => {
 }
 
 const supportNum = (state = 0, action) => {
+    if (action.type === 'SUPPORTNUM_STORE') {
+        return action.payload;
+    }
     return state;
 }
 
