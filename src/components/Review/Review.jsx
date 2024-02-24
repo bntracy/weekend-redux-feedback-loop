@@ -10,7 +10,11 @@ function Review() {
     const commentsText = useSelector(store => store.commentsText);
 
     const handleClick = () => {
-        axios.post('/api/feedback', {feelingNum, understandingNum, supportNum, commentsText}).then(response => {
+        axios.post('/api/feedback', {
+            feeling: feelingNum, 
+            understanding: understandingNum,
+            support: supportNum,
+            comments: commentsText}).then(response => {
             history.push('/thank-you');
         }).catch(err => {
             console.log('Error sending data to database', err);
