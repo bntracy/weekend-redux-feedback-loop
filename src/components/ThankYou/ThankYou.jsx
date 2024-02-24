@@ -16,7 +16,7 @@ function ThankYou() {
     return <>
         <h1>Feedback!</h1>
         <h2>Thank You!</h2>
-        <button onClick={handleClick}>Leave New Feedback</button>
+        <button data-testid="next" onClick={handleClick}>Leave New Feedback</button>
     </>;
 }
 
