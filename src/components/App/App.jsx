@@ -21,22 +21,22 @@ function App() {
           <Header />
           <Feeling />
         </Route>
-        <Route path="understanding">
+        <Route path="/understanding">
           <Header />
           <Understanding />
         </Route>
-        <Route path="support">
+        <Route path="/support">
           <Header />
           <Support />
         </Route>
-        <Route path="comments">
+        <Route path="/comments">
           <Header />
           <Comments />
         </Route>
-        <Route path="review">
+        <Route path="/review">
           <Review />
         </Route>
-        <Route path="thank-you">
+        <Route path="/thank-you">
           <ThankYou />
         </Route>
       </div>

@@ -2,6 +2,9 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import logger from 'redux-logger';
 
 const feelingNum = (state = 0, action) => {
+    if (action.type === 'FEELINGNUM_STORE') {
+        return action.payload;
+    }
     return state;
 }
 
