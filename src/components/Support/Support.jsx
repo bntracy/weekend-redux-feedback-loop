@@ -7,7 +7,8 @@ function Support() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const handleClick = () => {
+    const handleClick = (event) => {
+        event.preventDefault();
         dispatch({
             type: 'SUPPORTNUM_STORE',
             payload: supportInput
@@ -17,17 +18,20 @@ function Support() {
 
     return <>
         <h2>How well are you being supported?</h2>
-        <label htmlFor="support-input">Support?</label>
-        <input 
-            id="support-input"
-            type="number"
-            min="1"
-            max="5"
-            data-testid="input"
-            value={supportInput}
-            onChange={event=>setSupportInput(event.target.value)}
-        />
-        <button data-testid="next" onClick={handleClick}>Next</button>
+        <form onSubmit={handleClick}>
+            <label htmlFor="support-input">Support?</label>
+            <input 
+                id="support-input"
+                type="number"
+                min="1"
+                max="5"
+                data-testid="input"
+                value={supportInput}
+                onChange={event=>setSupportInput(event.target.value)}
+                required
+            />
+            <button data-testid="next" type="submit">Next</button>
+        </form>
     </>;
 }
 

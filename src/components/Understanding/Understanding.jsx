@@ -7,7 +7,8 @@ function Understanding() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const handleClick = () => {
+    const handleClick = (event) => {
+        event.preventDefault();
         dispatch({
             type: 'UNDERSTANDINGNUM_STORE',
             payload: understandingInput
@@ -17,17 +18,20 @@ function Understanding() {
 
     return <>
         <h2>How well are you understanding the content?</h2>
-        <label htmlFor="understanding-input">Understanding?</label>
-        <input 
-            id="understanding-input"
-            type="number"
-            min="1"
-            max="5"
-            data-testid="input"
-            value={understandingInput}
-            onChange={event=>setUnderstandingInput(event.target.value)}
-        />
-        <button data-testid="next" onClick={handleClick}>Next</button>
+        <form onSubmit={handleClick}>
+            <label htmlFor="understanding-input">Understanding?</label>
+            <input 
+                id="understanding-input"
+                type="number"
+                min="1"
+                max="5"
+                data-testid="input"
+                value={understandingInput}
+                onChange={event=>setUnderstandingInput(event.target.value)}
+                required
+            />
+            <button data-testid="next" type="submit">Next</button>
+        </form>
     </>;
 }
 

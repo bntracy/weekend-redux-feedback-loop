@@ -46,9 +46,11 @@ describe('Feedback Loop', () => {
     cy.get('[data-testid="next"]').click();
 
     cy.contains(/understanding/i).should('exist');
+    cy.get('[data-testid="input"]').type('5', {force: true})
     cy.get('[data-testid="next"]').click();
 
     cy.contains(/support/i).should('exist');
+    cy.get('[data-testid="input"]').type('5', {force: true})
     cy.get('[data-testid="next"]').click();
 
     cy.contains(/comments/i).should('exist');
