@@ -14,7 +14,8 @@ function Review() {
             feeling: feelingNum, 
             understanding: understandingNum,
             support: supportNum,
-            comments: commentsText}).then(response => {
+            comments: commentsText}
+        ).then(response => {
             history.push('/thank-you');
         }).catch(err => {
             console.log('Error sending data to database', err);
