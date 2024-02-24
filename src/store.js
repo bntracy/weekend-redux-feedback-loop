@@ -9,6 +9,9 @@ const feelingNum = (state = 0, action) => {
 }
 
 const understandingNum = (state = 0, action) => {
+    if (action.type === 'UNDERSTANDINGNUM_STORE') {
+        return action.payload;
+    }
     return state;
 }
 

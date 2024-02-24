@@ -12,7 +12,6 @@ function Feeling() {
             type: 'FEELINGNUM_STORE',
             payload: feelingInput
         });
-        setFeelingInput('');
         history.push('/understanding');
     }
 
